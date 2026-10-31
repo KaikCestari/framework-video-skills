@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Uma curadoria enxuta de skills de vídeo encontradas no GitHub." />
+    <title>Framework — skills de vídeo no GitHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="access-gate" id="access-gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+      <div class="gate-card">
+        <div class="gate-mark">F/</div>
+        <div class="eyebrow"><span class="dot"></span> acesso reservado</div>
+        <h1 id="gate-title">Entre para<br /><em>ver o catálogo.</em></h1>
+        <p>As 15 skills de vídeo ficam disponíveis para quem acompanha o projeto no Instagram.</p>
+        <a class="instagram-button" href="https://www.instagram.com/kaikcestarish/" target="_blank" rel="noreferrer">
+          <span class="instagram-icon">◎</span> seguir @Kaikcestarish <span>↗</span>
+        </a>
+        <button class="continue-button" id="continue-button" type="button">Já sigo — acessar catálogo <span>→</span></button>
+        <small>Ao continuar, você confirma que segue @Kaikcestarish.</small>
+      </div>
+    </div>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Frame-work início">
+        <span class="brand-mark">F/</span>
+        <span>framework</span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a class="active" href="#catalogo">Catálogo</a>
+        <a href="#metodo">Método</a>
+      </nav>
+      <a class="instagram-link" href="https://www.instagram.com/kaikcestarish/" target="_blank" rel="noreferrer">
+        <span>@Kaikcestarish</span><span class="arrow">↗</span>
+      </a>
+      <a class="github-link" href="https://github.com/search?q=video+skill&type=repositories" target="_blank" rel="noreferrer">
+        <span>Ver no GitHub</span><span class="arrow">↗</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" id="catalogo">
+        <div class="eyebrow"><span class="dot"></span> curadoria aberta · outubro 2026</div>
+        <h1>Ferramentas para<br /><em>dar movimento</em> às ideias.</h1>
+        <div class="hero-bottom">
+          <p>Uma seleção manual de skills e projetos que ajudam a criar, editar e dirigir vídeo com mais intenção — direto do GitHub.</p>
+          <div class="hero-stat"><strong>15</strong><span>skills<br />mapeadas</span></div>
+        </div>
+      </section>
+
+      <section class="catalog-section">
+        <div class="toolbar">
+          <div class="toolbar-label">Explorar por</div>
+          <div class="filter-group" role="group" aria-label="Filtros de categoria">
+            <button class="filter active" data-filter="all">Todos <span>15</span></button>
+            <button class="filter" data-filter="edicao">Edição <span>4</span></button>
+            <button class="filter" data-filter="motion">Motion <span>4</span></button>
+            <button class="filter" data-filter="ia">IA generativa <span>4</span></button>
+            <button class="filter" data-filter="workflow">Workflow <span>3</span></button>
+          </div>
+          <label class="search-wrap">
+            <span class="search-icon">⌕</span>
+            <input id="search" type="search" placeholder="Buscar skill..." aria-label="Buscar skill" />
+          </label>
+        </div>
+
+        <div class="results-meta"><span id="result-count">15 resultados</span><span class="source"><span class="source-dot"></span> fonte: GitHub</span></div>
+        <div class="skill-grid" id="skill-grid"></div>
+        <div class="empty-state" id="empty-state" hidden>Nenhuma skill encontrada. Tente outro termo.</div>
+      </section>
+
+      <section class="method-section" id="metodo">
+        <div class="method-title"><span class="section-number">02</span><h2>Como<br /><em>selecionamos.</em></h2></div>
+        <div class="method-copy">
+          <p>Não é uma lista de ferramentas da moda. Cada projeto entrou aqui porque resolve uma parte concreta do processo — do primeiro frame à entrega final.</p>
+          <div class="method-list">
+            <div><span>01</span><strong>Aberto</strong><p>código e documentação acessíveis no GitHub.</p></div>
+            <div><span>02</span><strong>Prático</strong><p>uma função clara dentro de um fluxo real.</p></div>
+            <div><span>03</span><strong>Ativo</strong><p>projetos com sinais recentes de manutenção.</p></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>FRAMEWORK / 2026</span>
+      <span>feito para quem pensa em sequências</span>
+      <span class="footer-links"><a href="https://www.instagram.com/kaikcestarish/" target="_blank" rel="noreferrer">@kaikcestarish ↗</a><a href="https://github.com/search?q=video+skill&type=repositories" target="_blank" rel="noreferrer">github ↗</a></span>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
