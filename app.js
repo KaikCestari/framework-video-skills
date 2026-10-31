@@ -21,20 +21,8 @@ const search = document.querySelector("#search");
 const count = document.querySelector("#result-count");
 const empty = document.querySelector("#empty-state");
 const accessGate = document.querySelector("#access-gate");
-const continueButton = document.querySelector("#continue-button");
 let activeFilter = "all";
-
-if (sessionStorage.getItem("framework-access") === "granted") {
-  accessGate.classList.add("is-hidden");
-} else {
-  document.body.classList.add("is-locked");
-}
-
-continueButton.addEventListener("click", () => {
-  sessionStorage.setItem("framework-access", "granted");
-  accessGate.classList.add("is-hidden");
-  document.body.classList.remove("is-locked");
-});
+document.body.classList.add("is-locked");
 
 function render() {
   const query = search.value.toLowerCase().trim();
