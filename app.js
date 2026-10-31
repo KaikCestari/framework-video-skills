@@ -21,8 +21,43 @@ const search = document.querySelector("#search");
 const count = document.querySelector("#result-count");
 const empty = document.querySelector("#empty-state");
 const accessGate = document.querySelector("#access-gate");
+const instagramButton = document.querySelector("#instagram-button");
+const instagramButtonLabel = document.querySelector("#instagram-button-label");
+const instagramButtonArrow = document.querySelector("#instagram-button-arrow");
+const gateStatus = document.querySelector("#gate-status");
 let activeFilter = "all";
-document.body.classList.add("is-locked");
+
+if (sessionStorage.getItem("framework-access") === "granted") {
+  accessGate.classList.add("is-hidden");
+} else {
+  document.body.classList.add("is-locked");
+}
+
+instagramButton.addEventListener("click", (event) => {
+  if (instagramButton.classList.contains("is-waiting")) {
+    event.preventDefault();
+    return;
+  }
+
+  instagramButton.classList.add("is-waiting");
+  instagramButtonLabel.textContent = "abrindo Instagram...";
+  instagramButtonArrow.textContent = "✓";
+  gateStatus.textContent = "Aguarde 5 segundos para liberar o catálogo.";
+
+  let seconds = 5;
+  const timer = window.setInterval(() => {
+    seconds -= 1;
+    if (seconds > 0) {
+      instagramButtonLabel.textContent = `aguarde ${seconds} segundos...`;
+      return;
+    }
+
+    window.clearInterval(timer);
+    sessionStorage.setItem("framework-access", "granted");
+    accessGate.classList.add("is-hidden");
+    document.body.classList.remove("is-locked");
+  }, 1000);
+});
 
 function render() {
   const query = search.value.toLowerCase().trim();

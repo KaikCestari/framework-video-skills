@@ -23,6 +23,7 @@ button, input { font: inherit; }
 .gate-card > p { max-width: 360px; margin: 0 0 28px; color: #686760; font-size: 14px; line-height: 1.55; }
 .instagram-button { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 14px 16px; border: 1px solid var(--ink); font: 11px "DM Mono", monospace; text-transform: uppercase; letter-spacing: .02em; }
 .instagram-button { color: var(--ink); background: var(--lime); }
+.instagram-button.is-waiting { cursor: wait; pointer-events: none; color: var(--ink); background: var(--soft-lime); }
 .instagram-icon { font-size: 18px; line-height: 10px; }
 .gate-card small { display: block; margin-top: 18px; color: #929087; font: 10px/1.4 "DM Mono", monospace; }
 
